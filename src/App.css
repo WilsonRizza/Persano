@@ -40,7 +40,7 @@ body{
 }
 
 input,
-.submit-btn{
+.submit{
   width: 80%;
   height: 35px;
   display: block;
@@ -59,14 +59,14 @@ input::placeholder{
 }
 
 input:focus,
-.submit-btn:hover{
+.submit:hover{
   background: white;
   color:black;
 }
 input:focus::placeholder{
   color:black;
 }
-.submit-btn{
+.submit{
   background-color: rgba(149, 149, 149, 0.452);
   width: auto;
   padding: 0 20px;
