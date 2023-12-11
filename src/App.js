@@ -3,10 +3,12 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css'; // Importe o arquivo CSS para estilizar o formulário
 import Login from './Login';
 import Cadastro from './Cadastrar';
+import {Navbar} from './components/navbar'
+
+
 function App() {
   return (
     <Router>
-      <div>
       <Switch>
         <Route exact path="/">
           <Login />
@@ -15,13 +17,13 @@ function App() {
         <Route exact path="/cadastro">
           <Cadastro />
         </Route>
+
+        <Route exact path="/Home">
+          <Navbar />
+        </Route>
       </Switch>
-      </div>
     </Router>
-    
   );
 }
 
-
 export default App;
-

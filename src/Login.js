@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css'; // Importe o arquivo CSS para estilizar o formulário
+import './Login.css';
 import { getUsuario, validarusuario } from './api';
 import { useState } from 'react';
 import { useHistory } from "react-router-dom"
@@ -10,12 +10,12 @@ import { useHistory } from "react-router-dom"
   const [senha, setSenha] = useState('');
   let history = useHistory();
 
-
+  
   const handleSubmit = (event) => {
     event.preventDefault();
 
     Logar(email, senha);
-    // limparCampos();
+    limparCampos();
   };
   
   // Função para limpar os campos do formulário
@@ -30,21 +30,20 @@ import { useHistory } from "react-router-dom"
 
     const resultado = await validarusuario(parametros)
       if(resultado.status === true){
-        history.push('/cadastro')
+        history.push('./Home')
         window.location.reload();
     } else {
       window.alert("Login ou senha inválidos")
     }
   };
-
-
  return (
+  
   <div className="box">
     <h1 className="heading">Login</h1>
     <form onSubmit={handleSubmit}>
       <input 
       type="email" 
-      placeholder="email" 
+      placeholder="Email" 
       autoComplete="off" 
       className="email"
       value={email}

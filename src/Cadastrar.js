@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import './App.css'; // Importe o arquivo CSS para estilizar o formulário
+import './Cadastrar.css'; // Importe o arquivo CSS para estilizar o formulário
 import {cadastrarUsuario, getUsuario} from './api'
+import { useHistory } from "react-router-dom"
 
 function Cadastro() {
   // Defina os estados para os valores dos campos do formulário
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  let history = useHistory();
 
   // Função para lidar com o envio do formulário
   const handleSubmit = (event) => {
@@ -34,6 +36,8 @@ function Cadastro() {
     const resultado = await cadastrarUsuario(parametros)
     if(resultado.status){
         console.log(resultado.dados)
+        history.push('/')
+        window.location.reload();
     }
   };
 
