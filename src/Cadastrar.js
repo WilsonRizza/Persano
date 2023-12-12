@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Cadastrar.css'; // Importe o arquivo CSS para estilizar o formulário
+import './Cadastrar.css'; 
 import {cadastrarUsuario, getUsuario} from './api'
 import { useHistory } from "react-router-dom"
 
